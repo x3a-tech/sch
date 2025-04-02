@@ -1,6 +1,6 @@
-# SPG - Storage PG
+# SCH - Storage CH
 
-Данный пакет служит для упрощения подключения к клиенту pgx, выполнения миграций и чтения конфига базы данных
+Данный пакет служит для упрощения подключения к клиенту clickhouse, выполнения миграций и чтения конфига базы данных
 
 Предварительно необходимо иметь конфиг файл и конфиг структуру "./internal/config/config.go" configo.Config
 
@@ -35,19 +35,19 @@ tasks:
 
 ### Запуск миграций
 
-Путь `md/migrate/run/main.go`
+Путь `cmd/migrate/run/main.go`
 
 ```go
 package main
 
 import (
-	"github.com/x3a-tech/spg"
+	"github.com/x3a-tech/sch"
 	"path/internal/config"
 )
 
 func main() {
 	cfg := config.MustLoad()
-	spg.MigrateRun(cfg.Database)
+	sch.MigrateRun(cfg.Database)
 }
 
 ```
@@ -59,13 +59,13 @@ func main() {
 package main
 
 import (
-	"github.com/x3a-tech/spg"
+	"github.com/x3a-tech/sch"
 	"path/internal/config"
 )
 
 func main() {
 	cfg := config.MustLoad()
-	spg.MigrateCreate(cfg.Database)
+	sch.MigrateCreate(cfg.Database)
 }
 
 ```
