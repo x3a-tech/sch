@@ -1,4 +1,4 @@
-package spg
+package sch
 
 import (
 	"errors"
