@@ -1,4 +1,4 @@
-module github.com/x3a-tech/spg
+module github.com/x3a-tech/sch
 
 go 1.24.1
 
