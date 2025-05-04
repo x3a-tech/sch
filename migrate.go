@@ -25,7 +25,7 @@ func MigrateCreate(cfg configo.Database) {
 }
 
 func Dsn(cfg *configo.Database) string {
-	return fmt.Sprintf("clickhouse://%s:%d/?username=%s&password=%s&database=%s&x-multi-statement=true", cfg.Host, cfg.Port, cfg.User, cfg.Password, cfg.Name)
+	return fmt.Sprintf("clickhouse://%s:%d/%s?username=%s&password=%s&x-multi-statement=true", cfg.Host, cfg.Port, cfg.Name, cfg.User, cfg.Password)
 }
 
 func runMigrations(cfg *configo.Database) {
